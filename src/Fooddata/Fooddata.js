@@ -1,16 +1,3 @@
-// import logo from './Logo.jpg'
-
-// for carrousel
-// import logo from './logo2.png'
-// import car1 from './car1.png'
-// import car2 from './car2.jpg'
-// import car3 from './car3.jpg'
-// import car4 from './car4.jpg'
-// import car5 from './car5.jpg'
-// import rating from './rating_starts.png'
-
-
- 
 import food_1 from './food_1.png'
 import food_2 from './food_2.png'
 import food_3 from './food_3.png'
@@ -46,60 +33,19 @@ import food_32 from './food_32.png'
 import food_38 from './food_38.jpg'
 import food_39 from './food_39.jpg'
 import food_40 from './food_40.jpg'
+import food_41 from './food_41.jpg'
+import food_42 from './food_42.jpg'
+import food_43 from './food_43.jpg'
+import food_44 from './food_44.jpg'
+import food_45 from './food_45.png'
+import food_46 from './food_46.jpg'
+import food_47 from './food_47.jpg'
+import food_48 from './food_48.jpg'
+import food_49 from './food_49.jpg'
+import food_50 from './food_50.jpg'
+import food_51 from './food_51.jpg'
 
 
-// for menu
-import menu1 from './menu1.png'
-import menu2 from './menu2.png'
-import menu3 from './menu3.png'
-import menu4 from './menu4.png'
-import menu5 from './menu5.png'
-import menu6 from './menu6.png'
-import menu7 from './menu7.png'
-
-// export const Menu_list = [
-//     {
-//         menu_name:"Salad",
-//         image:menu1
-//     },
-//     {
-//         menu_name:"Rolls",
-//         image:menu2
-//     },
-//     {
-//         menu_name:"Desserts",
-//         image:menu3
-//     },
-//     {
-//         menu_name:"Sandwitches",
-//         image:menu4
-//     },
-//     {
-//         menu_name:"Cakes",
-//         image:menu5
-//     },
-//     {
-//         menu_name:"Pasta",
-//         image:menu6
-//     },
-//     {
-//         menu_name:"Noodles",
-//         image:menu7
-//     },
-   
-// ]
-// export default rating
-
-// export const Images ={
-//     logo,
-//     car1,
-//     car2,
-//     car3,
-//     car4,
-//     car5,
-   
-    
-// }
 
  const  food_list =[
     {
@@ -502,6 +448,117 @@ import menu7 from './menu7.png'
         rating:4.6
         
       },
+      {
+        id: 41,
+        image: food_41,
+        name: "Paneer Butter Masala",
+        price: 250,
+        description: "It typically features a patty made from ingredients like vegetables, beans, lentils, grains, or plant-based proteins, seasoned with herbs and spices for added flavor.",
+        category: "North Indian",
+        rating:4.9
+        
+      },
+      {
+        id: 42,
+        image: food_42,
+        name: "Palak Paneer",
+        price: 220,
+        description: "It typically features a patty made from ingredients like vegetables, beans, lentils, grains, or plant-based proteins, seasoned with herbs and spices for added flavor.",
+        category: "North Indian",
+        rating:4.2
+        
+      },
+      {
+        id: 43,
+        image: food_43,
+        name: "Paneer Lababdar",
+        price: 300,
+        description: "It typically features a patty made from ingredients like vegetables, beans, lentils, grains, or plant-based proteins, seasoned with herbs and spices for added flavor.",
+        category: "North Indian",
+        rating:4.7
+        
+      },
+      {
+        id: 44,
+        image: food_44,
+        name: "Kadai Paneer",
+        price: 280,
+        description: "It typically features a patty made from ingredients like vegetables, beans, lentils, grains, or plant-based proteins, seasoned with herbs and spices for added flavor.",
+        category: "North Indian",
+        rating:4.5
+        
+      },
+      {
+        id: 45,
+        image: food_45,
+        name: "Masala Dosa",
+        price: 160,
+        description: "It typically features a patty made from ingredients like vegetables, beans, lentils, grains, or plant-based proteins, seasoned with herbs and spices for added flavor.",
+        category: "South Indian",
+        rating:4.6
+        
+      },
+      {
+        id: 46,
+        image: food_46,
+        name: "Dal Makhni",
+        price: 200,
+        description: "It typically features a patty made from ingredients like vegetables, beans, lentils, grains, or plant-based proteins, seasoned with herbs and spices for added flavor.",
+        category: "North Indian",
+        rating:4.6
+        
+      },
+      {
+        id: 47,
+        image: food_47,
+        name: "Butter Naan",
+        price: 15,
+        description: "It typically features a patty made from ingredients like vegetables, beans, lentils, grains, or plant-based proteins, seasoned with herbs and spices for added flavor.",
+        category: "Breads",
+        rating:4.6
+        
+      },
+      {
+        id: 48,
+        image: food_48,
+        name: "Tandooru Roti",
+        price: 10,
+        description: "It typically features a patty made from ingredients like vegetables, beans, lentils, grains, or plant-based proteins, seasoned with herbs and spices for added flavor.",
+        category: "Breads",
+        rating:4.6
+        
+      },
+      {
+        id: 49,
+        image: food_49,
+        name: "Roomali Roti",
+        price: 8,
+        description: "It typically features a patty made from ingredients like vegetables, beans, lentils, grains, or plant-based proteins, seasoned with herbs and spices for added flavor.",
+        category: "Breads",
+        rating:4.6
+        
+      },
+      {
+        id: 50,
+        image: food_50,
+        name: "Gulab Jamun",
+        price: 50,
+        description: "It typically features a patty made from ingredients like vegetables, beans, lentils, grains, or plant-based proteins, seasoned with herbs and spices for added flavor.",
+        category: "Desserts",
+        rating:4.6
+        
+      },
+      {
+        id: 51,
+        image: food_51,
+        name: "Idli",
+        price: 50,
+        description: "It typically features a patty made from ingredients like vegetables, beans, lentils, grains, or plant-based proteins, seasoned with herbs and spices for added flavor.",
+        category: "South Indian",
+        rating:4.6
+        
+      },
+    
   
 
 

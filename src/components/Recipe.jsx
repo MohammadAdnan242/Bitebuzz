@@ -12,7 +12,7 @@ const Recipe = () => {
     setAnswer('Loading...');
     try {
       const response = await axios({
-        url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAx54l2hsqsM3SxLsvRAJujejP8K0QxaxM",
+        url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyA3JEiRyS72oMvQi8V_gjV7q4SkHVsO4S8",
         method: "post",
         data: {
           contents: [{ parts: [{ text: `recipe of ${question} ` }] }],
