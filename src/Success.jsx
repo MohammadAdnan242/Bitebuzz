@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {HashLoader} from 'react-spinners'
 import Confetti from 'react-confetti'
-import ReactEmojis from "@souhaildev/reactemojis";
+// import ReactEmojis from "@souhaildev/reactemojis";
 import { useSelector } from 'react-redux';
 const Success=()=>{
     const [Loading,setLoading] = useState(true)
@@ -20,7 +20,7 @@ const Success=()=>{
          {Loading ? (<HashLoader color="orange" />) : (  <div>
          <Confetti/>
        <h2 className='text-3xl font-semibold mb-4'>Order Successfull</h2>
-       <p> Your order is successfully placed ! <span className='flex justify-center'><ReactEmojis emoji='😍' /></span></p>
+       <p> Your order is successfully placed ! <span className='flex justify-center'></span></p>
        </div>)}
      
        </div>
