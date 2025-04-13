@@ -4,11 +4,14 @@ import axios from "axios";
 const Recipe = () => {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("Waiting for your delicious query!");
- 
+  const [translatedAnswer, setTranslatedAnswer] = useState("");
+  const [language, setLanguage] = useState("hi"); // Default Hindi
+  const [loading, setLoading] = useState(false);
 
   const generateAnswer = async () => {
     setAnswer("Loading...");
-    
+    setTranslatedAnswer(""); // Reset translated text
+
     try {
       const response = await axios({
         url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAN06XMeBh8qfXD0NqWP44yxP0nLNASJx4",
@@ -30,8 +33,33 @@ const Recipe = () => {
     }
   };
 
-
+  const translateAnswer = async () => {
+    if (!answer || answer === "Loading..." || answer.startsWith("Error")) return;
   
+    setLoading(true);
+    try {
+      const res = await axios.get(
+        `https://lingva.ml/api/v1/en/${language}/${encodeURIComponent(answer)}`
+      );
+      const translated = res.data.translation;
+      setTranslatedAnswer(translated);
+    } catch (err) {
+      console.error("Translation Error:", err);
+      setTranslatedAnswer("Translation failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+  
+
+  const languages = [
+    { code: "en", label: "English" },
+    { code: "hi", label: "Hindi" },
+    { code: "fr", label: "French" },
+    { code: "es", label: "Spanish" },
+    { code: "bn", label: "Bengali" },
+    { code: "ur", label: "Urdu" },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-400 to-indigo-500 p-6 flex items-center justify-center">
@@ -47,24 +75,40 @@ const Recipe = () => {
           className="w-full h-28 rounded-lg border border-gray-300 p-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none placeholder-gray-500"
         />
 
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-4 flex-wrap">
           <button
             onClick={generateAnswer}
             className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-orange-300 transition duration-300"
           >
             Get Recipe 😎
           </button>
+
+          <select
+            value={language}
+            onChange={(e) => setLanguage(e.target.value)}
+            className="px-4 py-2 border border-gray-300 rounded-md"
+          >
+            {languages.map((lang) => (
+              <option key={lang.code} value={lang.code}>
+                {lang.label}
+              </option>
+            ))}
+          </select>
+
+          <button
+            onClick={translateAnswer}
+            disabled={loading}
+            className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 disabled:opacity-50"
+          >
+            {loading ? "Translating..." : "Translate 🌍"}
+          </button>
         </div>
 
         <div className="bg-gray-100 p-4 rounded-lg shadow-inner overflow-auto max-h-96">
-          <pre id="google_translate" className="text-gray-700 font-mono whitespace-pre-wrap">
-            {answer}
+          <pre className="text-gray-700 font-mono whitespace-pre-wrap">
+            {translatedAnswer || answer}
           </pre>
         </div>
-
-      
-
-       
       </div>
     </div>
   );
