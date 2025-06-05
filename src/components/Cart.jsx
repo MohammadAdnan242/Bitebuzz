@@ -48,9 +48,16 @@ const Cart = () => {
           <IoMdClose onClick={() => setActiveCart(!activeCart)} className='border-2 border-gray-600  font-bold p-0 text-xl rounded-md hover:text-orange-400 hover:border-orange-500 cursor-pointer '/>
         </div>
 
-        {cartItems.length > 0 ? cartItems.map((food) => (
-          <Carditem key={food.id} id={food.id} name={food.name} price={food.price} img={food.img} qty={food.qty} />
-        )) : <h2 className='text-center text-xl font-bold '>Your cart is empty</h2>}
+       <div className="overflow-y-auto max-h-[70vh] pr-2">
+  {cartItems.length > 0 ? (
+    cartItems.map((food) => (
+      <Carditem key={food.id} id={food.id} name={food.name} price={food.price} img={food.img} qty={food.qty} />
+    ))
+  ) : (
+    <h2 className='text-center text-xl font-bold'>Your cart is empty</h2>
+  )}
+</div>
+
         
         <div className='absolute bottom-0'>
           <h3 className='float-left font-semibold '>Items: {totalQty}</h3> <br />

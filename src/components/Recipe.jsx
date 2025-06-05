@@ -34,22 +34,26 @@ const Recipe = () => {
   };
 
   const translateAnswer = async () => {
-    if (!answer || answer === "Loading..." || answer.startsWith("Error")) return;
-  
-    setLoading(true);
-    try {
-      const res = await axios.get(
-        `https://lingva.ml/api/v1/en/${language}/${encodeURIComponent(answer)}`
-      );
-      const translated = res.data.translation;
-      setTranslatedAnswer(translated);
-    } catch (err) {
-      console.error("Translation Error:", err);
-      setTranslatedAnswer("Translation failed. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  if (!answer || answer === "Loading..." || answer.startsWith("Error")) return;
+
+  setLoading(true);
+  try {
+    // Clean the answer: replace newlines and limit length
+    let cleanText = answer.replace(/[\r\n]+/g, " ").slice(0, 100);
+
+    const res = await axios.get(
+      `http://localhost:5000/translate?lang=${language}&text=${encodeURIComponent(cleanText)}`
+    );
+    const translated = res.data.translation;
+    setTranslatedAnswer(translated);
+  } catch (err) {
+    console.error("Translation Error:", err);
+    setTranslatedAnswer("Translation failed. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
+
   
 
   const languages = [
