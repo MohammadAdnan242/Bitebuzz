@@ -74,43 +74,52 @@ Create a firebase.jsx file in the root directory and add the following Firebase 
 
  Run Locally
 
- 1. Visit (https://bitebuzz0070.netlify.app/) after starting the development server.
+ 1. Visit (https://bitebuzz-iatz.vercel.app) after starting the development server.
  2. Sign up or log in using Firebase authentication.
  3. Browse the app, toggle between light and dark modes, and enjoy personalized recipe suggestions.
  4. Access the admin panel (admin privileges required) to manage user data and client requests.
 ## Roadmap📂 (Vite)
 
     BiteBuzz/
-    ├── public/                 # Public assets (static files)
-    │   ├── index.html          # HTML template file (entry point for Vite)
-    │   └── assets/             # Store images, icons, etc.
-    ├── src/                    # Main source folder
-    │   ├── assets/             # Static assets like images, logos, etc.
-    │   ├── components/         # Reusable UI components
-    │   │   ├── Navbar/         # Navbar component (navigation, branding)
-    │   │   ├── Body/           # Main content component (home page, menu, etc.)
-    │   │   ├── Cart/           # Shopping cart component
-    │   │   └── Footer/         # Footer component (links, contact info)
-    │   ├── features/           # Redux slices for managing state
-    │   │   ├── darkModeSlice.js  # Slice for dark mode state
-    │   │   ├── userSlice.js      # Slice for user authentication and data
-    │   │   └── cartSlice.js      # Slice for cart management
-    │   ├── store/              # Redux store configuration
-    │   │   └── store.js        # Store setup and combining of reducers
-    │   ├── pages/              # Pages of the website
-    │   │   ├── Home.js         # Main home page component
-    │   │   ├── AdminPanel.js   # Admin panel page (restricted access)
-    │   │   └── RecipePage.js   # Recipe generation page
-    │   ├── styles/             # Tailwind CSS configurations
-    │   │   └── tailwind.css    # Tailwind base styles
-    │   ├── utils/              # Utility functions (helpers, API calls, etc.)
-    │   ├── App.jsx             # Main app entry point
-    │   └── main.jsx            # Vite entry point (renders App.jsx)
-    ├── .gitignore              # Git ignore rules
-    ├── firebase.jsx                    # Environment variables (Firebase config, API keys, etc.)
-    ├── package.json            # npm dependencies and scripts
-    ├── vite.config.js          # Vite configuration file
-    └── README.md               # Project documentation
+├── frontend/                     # React frontend code
+│   ├── public/                   
+│   │   ├── index.html            
+│   │   └── assets/               
+│   ├── src/                      
+│   │   ├── assets/               
+│   │   ├── components/           
+│   │   │   ├── Navbar/           
+│   │   │   ├── Body/             
+│   │   │   ├── Cart/             
+│   │   │   └── Footer/           
+│   │   ├── features/             
+│   │   │   ├── darkModeSlice.js  
+│   │   │   ├── userSlice.js      
+│   │   │   └── cartSlice.js      
+│   │   ├── store/                
+│   │   │   └── store.js          
+│   │   ├── pages/                
+│   │   │   ├── Home.js           
+│   │   │   ├── AdminPanel.js     
+│   │   │   └── RecipePage.js     
+│   │   ├── styles/               
+│   │   │   └── tailwind.css      
+│   │   ├── utils/                
+│   │   ├── App.jsx               
+│   │   └── main.jsx              
+│   ├── .gitignore                
+│   ├── firebase.jsx              
+│   ├── package.json              
+│   ├── vite.config.js            
+│   └── README.md                 
+│
+├── backend/                      # Node.js/Express backend
+│   ├── server.js                  # Main server entry point
+│   ├── package.json              # npm dependencies and scripts for backend
+│   └── README.md                 # Backend documentation
+│
+└── README.md                     # Project documentation (overview of BiteBuzz)
+
 
 
 
