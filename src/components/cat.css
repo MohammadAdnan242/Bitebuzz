@@ -1,0 +1,31 @@
+.explore-menu{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.explore-menu h1{
+    color:black;
+    font-weight: 550;
+    margin-top: 30px;
+    margin-left: 10px;
+    
+}
+.explore-menu-text{
+    max-width: 60%;
+    columns:#808080;
+    margin-left: 30px;
+    font-weight: 200px;
+}
+.explore-menu-list{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:30px;
+    text-align: center;
+    margin: 20px 0px;
+    overflow-x: scroll;
+}
+.explore-menu-list::-webkit-scrollbar {
+    display: none;
+}
