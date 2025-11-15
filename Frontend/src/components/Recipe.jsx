@@ -29,7 +29,7 @@ const Recipe = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://bitebuzz-gamma.vercel.app/recipe", {
+      const response = await fetch("https://bitebuzz-gamma.vercel.app/recipe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ dish: question }),
@@ -56,7 +56,7 @@ const Recipe = () => {
 
     setTranslating(true);
     try {
-      const response = await fetch("http://bitebuzz-gamma.vercel.app/translate", {
+      const response = await fetch("https://bitebuzz-gamma.vercel.app/translate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: answer, language }),
