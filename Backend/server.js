@@ -18,6 +18,8 @@ app.use(limiter);
 
 // Initialize Gemini
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+// console.log("GEMINI KEY:", process.env.GEMINI_API_KEY);
+
 
 // ------------------------
 // Recipe generation
@@ -27,7 +29,7 @@ app.post("/recipe", async (req, res) => {
     const { dish } = req.body;
     if (!dish) return res.status(400).json({ error: "Dish name required" });
 
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const result = await model.generateContent(
       `Give me a detailed recipe for: ${dish}. Include ingredients and steps.`
@@ -48,7 +50,7 @@ app.post("/translate", async (req, res) => {
     const { text, language } = req.body;
     if (!text || !language) return res.status(400).json({ error: "Text and language required" });
 
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const result = await model.generateContent(
       `Translate the following text to ${language}:\n\n${text}`
@@ -66,5 +68,4 @@ app.post("/translate", async (req, res) => {
 // ------------------------
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));
-module.exports = app;
-
+export default app
