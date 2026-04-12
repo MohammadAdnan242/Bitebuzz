@@ -46,6 +46,12 @@ import food_50 from './food_50.jpg'
 import food_51 from './food_51.jpg'
 
 
+// //signup back image
+// import back1 from './back1.png'
+// //login back image
+// import back2 from './back2.png'
+
+
 
  const  food_list =[
     {
